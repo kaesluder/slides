@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Slides</title>
+  <style>
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh; /* Full viewport height */
+      margin: 0;
+      scroll-snap-align: start;
+      background: white;
+      width: 100%;
+      font-size: 3rem;
+    }
+
+    hr {
+      display: block;
+      height: 100vh; /* Use as a slide */
+      border: none;
+    }
+</style>
+</head>
+<body>
+  {{markdown}}
+</body>
