@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Slides</title>
@@ -10,8 +11,7 @@
       scroll-snap-type: y mandatory;
     }
 
-    h1 {
-      display: flex;
+    body > section {
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -23,13 +23,22 @@
       font-size: 3rem;
     }
 
-    hr {
-      display: block;
-      height: 100vh; /* Use as a slide */
-      border: none;
-    }
 </style>
 </head>
 <body>
   {{markdown}}
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("keydown", (event) => {
+        console.log("Pressed:", event.key); // Debugging output
+
+        if (event.key === "ArrowDown" || event.key === "PageDown" || event.key === " ") {
+          window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+        } else if (event.key === "ArrowUp" || event.key === "PageUp") {
+          window.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
+        }
+      });
+    });
+  </script>
 </body>
+</html>
